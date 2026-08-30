@@ -5,7 +5,7 @@ class CfgPatches
 		name="AI Quadratic Detection";
 		author="DarkBall";
 		url="";
-		requiredVersion=1.6;
+		requiredVersion = 2.22;
 		requiredAddons[]=
 		{
 			"A3_Data_F_Decade_Loadorder"
