@@ -2,26 +2,28 @@
 
 [![CI](https://github.com/Sam-DarkBall-Mods/AIQD/actions/workflows/ci.yml/badge.svg)](https://github.com/Sam-DarkBall-Mods/AIQD/actions/workflows/ci.yml)
 
-AI quick-deployment systems for Arma 3.
+AIQD stands for AI Quadratic Detection. When a player opens a UAV gunner view,
+the mod searches for nearby vehicles and draws a box around targets the UAV can
+see. Fog, daylight, night vision and thermal mode affect the result. The search
+distance can be changed in CBA settings.
 
 ## Requirements
 
 - Arma 3 2.22 or newer
-- Additional runtime dependencies declared by `CfgPatches`
+- CBA_A3
 
-## Development
+## Building
 
 ```bash
+python3 -B -m unittest discover -s tests -p "test_*.py" -v
 hemtt check
 hemtt build --no-bin
-python3 -B -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-Legacy `CfgPatches`, function names, virtual PBO prefixes, and release PBO
-filenames are compatibility contracts and must not change in a patch release.
+The old `AIQD` PBO prefix and `DB_AIQD` function namespace stay in place
+because missions may already refer to them.
 
 ## License
 
-SQF, Arma configuration, and tooling are GPL-2.0-or-later. Original Arma
-models, textures, materials, animations, and audio are APL-SA. See
-[LICENSES.md](LICENSES.md) and closer notices.
+The SQF code, Arma config and build files use GPL-2.0-or-later. Original assets
+use APL-SA. See [LICENSES.md](LICENSES.md).
